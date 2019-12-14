@@ -1,0 +1,78 @@
+
+public class Main {
+  public static void main(String[] args) {
+
+    // These variables are the dimensions of the frame.
+    int length = 20;
+    int width = 9;
+    // These variables create the size of the "cone". 
+    int height = 5;
+
+    frame(length, width);
+    downCone(height, length);
+    upCone(height, length);
+    frame(length, width);
+
+
+  }
+  public static void frame(int x, int y){
+    String line = "-";
+
+    for (int j = 0; j < x; j++){
+      line += "-";
+    }
+    
+    System.out.println(line);
+
+    String hollow = " ";
+    for (int i = 0; i < x-2; i++){
+      hollow += " ";
+    }
+    for (int e = 0; e < y-2; e++){
+      System.out.println("|" + hollow + "|");
+    }
+    System.out.println(line);
+  }
+  public static void upCone(int a, int b){
+    String spacing = "";
+    for (int c = 0; c < b/2; c++){
+      spacing += " ";
+    }
+    String diameter = "";
+    for (int d = 0; d < a; d++){
+      System.out.println(spacing + "/" + diameter + "\\");
+      b -= 2;
+      spacing = "";
+      for (int z = 0; z < b/2; z++){
+        spacing += " ";
+      }
+      diameter += "  ";
+    }
+  }
+  public static void downCone(int a, int b){
+    String spacing = "";
+    int t = b;
+    for (int c = 0; c < b/2; c++){
+      spacing += " ";
+    }
+    String diameter = "";
+    for (int d = 0; d < a; d++){
+      t -= 4;
+      diameter = "";
+      for (int w = 0; w < t/2; w++){
+        diameter += " ";
+      }
+      System.out.println(spacing + "\\" + diameter + "/");
+      b += 4;
+      spacing = "";
+      for (int z = 0; z < b/4; z++){
+        spacing += " ";
+      }
+    }
+  }
+      
+
+
+
+
+}
